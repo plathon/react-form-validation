@@ -41,3 +41,21 @@ export function AreSame({value1, value2}) {
   return value1 === value2 ?
     valid() : invalid('Values have to match.')
 }
+
+export function isBase64({str}) {
+  if (!str)
+    return invalid('Value cannot be null.')
+  return (validator.isBase64(str)) ? valid() : invalid('Cryptography error, base64 required')
+}
+
+export function isCreditCard({number}){
+  if (!number)
+    return invalid('Value cannot be null.')
+  return (validator.isCreditCard(number)) ? valid() : invalid('Credit Card isn`t Valid')
+}
+
+export function isCurrency({currency}) {
+  if (!currency)
+    return invalid('Value cannot be null.')
+  return (validator.isCurrency(currency)) ? valid() : invalid('Currency isn`t Valid')
+}
