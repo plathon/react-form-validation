@@ -54,8 +54,8 @@ export function isCreditCard({number}){
   return (validator.isCreditCard(number)) ? valid() : invalid('Credit Card isn`t Valid')
 }
 
-export function isCurrency({currency}) {
+export function isCurrency({currency, opts}) {
   if (!currency)
     return invalid('Value cannot be null.')
-  return (validator.isCurrency(currency)) ? valid() : invalid('Currency isn`t Valid')
+  return (validator.isCurrency(currency, opts)) ? valid() : invalid('Currency isn`t Valid')
 }
